@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Video Summarizer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <i class="fab fa-youtube logo" style="color: #ff0000; font-size: 4rem;"></i>
+            <h1>YouTube Video Summarizer</h1>
+        </div>
+        
+        <form action="/summarize" method="post" id="summarize-form">
+            <div class="form-group">
+                <label for="video_url">
+                    <i class="fas fa-link"></i> Enter YouTube Video URL:
+                </label>
+                <input type="url" id="video_url" name="video_url" required 
+                       placeholder="https://www.youtube.com/watch?v=...">
+            </div>
+            <button type="submit">
+                <i class="fas fa-magic"></i> Generate Summary
+            </button>
+        </form>
+        
+        <div class="loading">
+            <i class="fas fa-spinner fa-spin"></i> Generating summary...
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('summarize-form').addEventListener('submit', function() {
+            document.querySelector('.loading').classList.add('active');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summary Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <i class="fab fa-youtube logo" style="color: #ff0000; font-size: 4rem;"></i>
+            <h1>Video Summary</h1>
+        </div>
+        
+        <div class="summary-container">
+            <p class="summary-text">{{ summary }}</p>
+        </div>
+        
+        <a href="/" class="back-link">
+            <i class="fas fa-arrow-left"></i> Generate Another Summary
+        </a>
+    </div>
+</body>
+</html>
